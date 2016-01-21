@@ -1,0 +1,104 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.school_results.v0
+
+concept
+	[at0000]	-- School results
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"57CD9CA62568A45ED314A2C5F1F6D468">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- School results
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- School results
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- very good
+													at0006, 	-- average
+													at0007]	-- under average
+												}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Descrrription
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"School results">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"School results">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"very good">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"average">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"under average">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Descrrription">
+					description = <"*">
+				>
+			>
+		>
+	>

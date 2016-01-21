@@ -1,0 +1,285 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.child_description.v0
+
+concept
+	[at0000]	-- Child description
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2BCAA456A15CFD7F0E2C739BB906613C">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Child description
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- alergic
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- alergy description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- alergy symptoms
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- eyeglasses
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- braces
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- plantar
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- medicines
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..*} matches {	-- medicine list
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- specialist clinic
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..*} matches {	-- specialist clinic list
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {	-- aliments and symptoms
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0015, 	-- headache
+													at0016, 	-- abdominal pain
+													at0017, 	-- diarrhea
+													at0018, 	-- constipation
+													at0019, 	-- lack of appetite
+													at0020, 	-- excessive appetite
+													at0021, 	-- discomfort during urination
+													at0022, 	-- bedwetting
+													at0023, 	-- attacks of breathlessness
+													at0024, 	-- long-lasting cough
+													at0025, 	-- long-lasting rhinitis
+													at0026, 	-- seizures
+													at0027, 	-- fainting
+													at0028, 	-- sleep disturbances
+													at0029, 	-- tics
+													at0030, 	-- stutter
+													at0031]	-- other
+												}
+											}
+										}
+									}
+									ELEMENT[at0032] occurrences matches {0..1} matches {	-- aliments and symptoms description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- behavior description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Child description">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"alergic">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"alergy description">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"alergy symptoms">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"eyeglasses">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"braces">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"plantar">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"medicines">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"medicine list">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"specialist clinic">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"specialist clinic list">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"aliments and symptoms">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"headache">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"abdominal pain">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"diarrhea">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"constipation">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"lack of appetite">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"excessive appetite">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"discomfort during urination">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"bedwetting">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"attacks of breathlessness">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"long-lasting cough">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"long-lasting rhinitis">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"seizures">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"fainting">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"sleep disturbances">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"tics">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"stutter">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"other">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"aliments and symptoms description">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"behavior description">
+					description = <"*">
+				>
+			>
+		>
+	>

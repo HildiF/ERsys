@@ -1,0 +1,95 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.phisical_fitness.v0
+
+concept
+	[at0000]	-- Phisical fitness
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B202E5E9CD7294A1135B41928F0118F4">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Phisical fitness
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- phisical fitness
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0006, 	-- above average
+													at0007, 	-- average
+													at0008]	-- under average
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Phisical fitness">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"phisical fitness">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"above average">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"average">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"under average">
+					description = <"*">
+				>
+			>
+		>
+	>

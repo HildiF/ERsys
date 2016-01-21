@@ -1,0 +1,110 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.pe_group.v0
+
+concept
+	[at0000]	-- Pe group
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"64A2E72C38123E1B66D1F29810E5F2AA">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Pe group
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- PE group
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- A
+													at0006, 	-- As
+													at0007, 	-- B
+													at0008, 	-- Bk
+													at0009, 	-- C
+													at0010]	-- Cl
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pe group">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"PE group">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"A">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"As">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"B">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Bk">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"C">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Cl">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>a938c23e-271d-4149-a6c5-228a79ba27c7</id>
+  <name>erSys - SchoolSys - Doctor Medical Report.v0</name>
+  <description>
+    <original_author>
+      <item>
+        <key>author</key>
+        <value>Krzysztof Wyszyński</value>
+      </item>
+    </original_author>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose>eHealth application</purpose>
+      <use />
+      <misuse />
+      <copyright>eR sp. z o.o.</copyright>
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.medical_examination.v0" concept_name="Medical examination" name="School Doctor report">
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.physical_development.v0" concept_name="Physical development" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.pubesence.v0" concept_name="Pubesence" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.menarche.v0" concept_name="Menarche" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.psychosocial_development.v0" concept_name="Psychosocial development" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.chest.v0" concept_name="Chest" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.thyroid.v0" concept_name="Thyroid" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.mouth.v0" concept_name="Mouth" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.exam.v1" concept_name="Physical examination findings" max="1" path="/content" name="Physical examination">
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0011]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/state[at0009]/items[at0008]" max="0" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.exam_mouth.v0" concept_name="Examination of mouth" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+        <Rule path="/items[at0002]" max="0" />
+        <Rule path="/items[at0006]" max="0" />
+        <Rule path="/items[at0007]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.exam_skin.v0" concept_name="Examination of skin" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+        <Rule path="/items[at0001]" max="0" />
+        <Rule path="/items[at0002]" max="0" />
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0006]" max="0" />
+      </Items>
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.skin.v0" concept_name="Skin" path="/content" />
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.pe_group.v0" concept_name="Pe group" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.sport_competition.v0" concept_name="Sport competition" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.choice_of_profession.v0" concept_name="Choice of profession" path="/content" />
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.recommendation.v1" concept_name="Recommendation" path="/content" />
+    <Context>
+      <hide_on_form>true</hide_on_form>
+    </Context>
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.medical_examination.v0">
+    <digest id="MD5-CAM-1.0.1">5321B82A4FAB913847F288DF841DC1FD</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.physical_development.v0">
+    <digest id="MD5-CAM-1.0.1">C71EC59E0946A12CE3932C0B6B6F4F75</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.pubesence.v0">
+    <digest id="MD5-CAM-1.0.1">5824E901FA0E96A1F1B0CD5296377459</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.menarche.v0">
+    <digest id="MD5-CAM-1.0.1">10C3E66A5C7C0697F3C88C70D9DF63E8</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.psychosocial_development.v0">
+    <digest id="MD5-CAM-1.0.1">38DA56245219D4B1FE2384810C50FA1A</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.chest.v0">
+    <digest id="MD5-CAM-1.0.1">A7EF7E946E882984EF26D0D4BDF65239</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.thyroid.v0">
+    <digest id="MD5-CAM-1.0.1">C8CEFA769EC465115964CEDE3EB6C252</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.mouth.v0">
+    <digest id="MD5-CAM-1.0.1">F0DBAC0531F7AE75113334190D32083E</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.exam.v1">
+    <digest id="MD5-CAM-1.0.1">F68E5D84BAEAB67A14FBFFC77373CF88</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.exam_mouth.v0">
+    <digest id="MD5-CAM-1.0.1">EA0737D7BC6D7D8007BC994F6CC36926</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.exam_skin.v0">
+    <digest id="MD5-CAM-1.0.1">33CB8244109749E66713EB403C570CC8</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.skin.v0">
+    <digest id="MD5-CAM-1.0.1">C6B68B72D14026BE9EC77EA3FFF59D7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1">
+    <digest id="MD5-CAM-1.0.1">88AF7BC619F0DF958D2F00293756F398</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.pe_group.v0">
+    <digest id="MD5-CAM-1.0.1">64A2E72C38123E1B66D1F29810E5F2AA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.sport_competition.v0">
+    <digest id="MD5-CAM-1.0.1">168D347BAC129E69DFA75546FEE0A51F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.choice_of_profession.v0">
+    <digest id="MD5-CAM-1.0.1">579326AB6F9D0F6BC16E0072F26240E1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.recommendation.v1">
+    <digest id="MD5-CAM-1.0.1">876E92FE7EE5857A03C66118CAB0461A</digest>
+  </integrity_checks>
+</template>

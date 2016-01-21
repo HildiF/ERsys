@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.deaseses_injuries_operations.v0
+
+concept
+	[at0000]	-- Deaseses injuries operations
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"86EA8CABBB0153489F456E29ED20EAE7">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Deaseses injuries operations
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- age
+										value matches {
+											C_DV_ORDINAL <
+											>
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Deaseses injuries operations">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"age">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"description">
+					description = <"*">
+				>
+			>
+		>
+	>

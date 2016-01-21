@@ -1,0 +1,46 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.parents_info.v0
+
+concept
+	[at0000]	-- Parents info
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"4F28FD9A9EA123CC55788CABD5085F67">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- Parents info
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Parents info">
+					description = <"unknown">
+				>
+			>
+		>
+	>

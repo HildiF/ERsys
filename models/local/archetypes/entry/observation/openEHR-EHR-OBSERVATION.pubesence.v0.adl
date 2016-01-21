@@ -1,0 +1,105 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.pubesence.v0
+
+concept
+	[at0000]	-- Pubesence
+language
+	original_language = <[ISO_639-1::pl]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["pl"] = <
+			language = <[ISO_639-1::pl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"5824E901FA0E96A1F1B0CD5296377459">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Pubesence
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- tanner scale
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- Faza 1
+													at0006, 	-- Faza 2
+													at0007, 	-- Faza 3
+													at0008, 	-- Faza 4
+													at0009]	-- Faza 5
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["pl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pubesence">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"tanner scale">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Faza 1">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Faza 2">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Faza 3">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Faza 4">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Faza 5">
+					description = <"*">
+				>
+			>
+		>
+	>
